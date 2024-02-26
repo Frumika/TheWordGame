@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/Part_1_Parser/Dictionary.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Part_1_Parser/Part_1_Parser.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Test/Test.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File00_Main.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File01_HomeScreen.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File02_ModeSelection.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File03_SelectFile.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File04_GameScreen.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File11_Header.h" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File12_Animals.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File13_Cities.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/TheWordGame/File14_Plants.txt" charset="windows-1251" />
+  </component>
+</project>
