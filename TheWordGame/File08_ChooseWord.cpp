@@ -28,7 +28,7 @@ string chooseWord(string* list, int* used_index, string user_word)
 
         condition = (index == -1) && checkWords(user_word, pc_word);
         // если слово не было использованно и подходит под правила игры то true
-        if (c == 400) return "list_is_empty"; // если закончился список
+        if (c == 399) return "list_is_empty"; // если закончился список
     }
     while (condition == false);
 
@@ -37,7 +37,7 @@ string chooseWord(string* list, int* used_index, string user_word)
     return pc_word; // возвращаем подходящее слово
 }
 
-string chooseUserWord(string* list, int* used_index, string pc_word)
+string chooseUserWord(string* list, int* used_index, string pc_word, int score)
 {
     string user_word;
     int index;
@@ -49,11 +49,7 @@ string chooseUserWord(string* list, int* used_index, string pc_word)
 
         getline(cin, user_word);
 
-        if (user_word == "0")
-        {
-            cout << "End_of_Game"  << endl;
-            exit(0);
-        }
+        if (user_word == "0") getEndOfGame(score);
 
         else
         {
@@ -65,7 +61,9 @@ string chooseUserWord(string* list, int* used_index, string pc_word)
                 (checkWords(pc_word, user_word)) && // соблюдает правила
                 (*(used_index + index) == -1); // не использовалось ранее
 
-            if (condition == false) cout << "| Слово использованно / слова не существует" << endl;
+            if (index == -1) cout << "| Слова не существует" << endl;
+            else if (!checkWords(pc_word, user_word)) cout << "| Слово нарушает праввила" << endl;
+            else if (*(used_index + index) != -1) cout << "| Слово было использовано ранее" << endl;
         }
     }
     while (condition == false);
@@ -73,4 +71,26 @@ string chooseUserWord(string* list, int* used_index, string pc_word)
     *(used_index + index) = index;
 
     return user_word;
+}
+
+bool seeAnswer(string* list, int* used_index, string word)
+{
+    string pc_word;
+    bool condition;
+    int index;
+    int c = -1;
+
+    do
+    {
+        c += 1;
+        pc_word = *(list + c); // берем слово из списка
+        index = *(used_index + c); // смотрим было ли оно использовано
+
+        condition = (index == -1) && checkWords(word, pc_word);
+        // если слово не было использованно и подходит под правила игры то true
+        if (c == 399) return false; // если закончился список
+    }
+    while (condition == false);
+
+    return true;
 }

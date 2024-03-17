@@ -7,6 +7,7 @@ void getModeSelection();
 
 void selectFile(char button);
 
+void getEndOfGame(int score);
 void getGameScreen(std::string* list);
 
 std::string toLowercase(std::string word);
@@ -19,4 +20,5 @@ int searchIndex(std::string word, std::string* list);
 
 std::string chooseWord(std::string* list,int* used_index ,std::string user_word);
 std::string chooseWord(std::string* list);
-std::string chooseUserWord(std::string* list, int* used_index, std::string pc_word);
+std::string chooseUserWord(std::string* list, int* used_index, std::string pc_word, int score);
+bool seeAnswer(std::string* list, int* used_index, std::string word);
