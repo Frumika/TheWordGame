@@ -4,7 +4,7 @@
 int searchIndex(std::string word, std::string* list)
 {
     int res = -1;
-    for (int i = 0; i < 150; i++) if (*(list + i) == word) res = i;
+    for (int i = 0; i < 400; i++) if (*(list + i) == word) res = i;
 
     return res;
 }

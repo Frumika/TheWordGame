@@ -20,6 +20,3 @@ int searchIndex(std::string word, std::string* list);
 std::string chooseWord(std::string* list,int* used_index ,std::string user_word);
 std::string chooseWord(std::string* list);
 std::string chooseUserWord(std::string* list, int* used_index, std::string pc_word);
-
-
-

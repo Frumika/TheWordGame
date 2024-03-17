@@ -8,7 +8,7 @@ using namespace std;
 void selectFile(char button)
 {
     ifstream file; // переменная для чтения файла
-    string list[150]; // массив для записи файла 
+    string list[400]; // массив для записи файла 
     string word; // считываемое из файла слово для записи в массив 
     int counter = 0; // текущий записываемый индекс
 

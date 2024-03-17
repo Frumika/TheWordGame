@@ -9,7 +9,7 @@ using namespace std;
 string chooseWord(string* list)
 {
     srand(time(NULL));
-    return *(list + rand() % 150);
+    return *(list + rand() % 400);
 }
 
 // Возвращает слово в ответ на слово игрока либо сообщение о том что слов больше нет
@@ -28,7 +28,7 @@ string chooseWord(string* list, int* used_index, string user_word)
 
         condition = (index == -1) && checkWords(user_word, pc_word);
         // если слово не было использованно и подходит под правила игры то true
-        if (c == 149) return "list_is_empty"; // если закончился список
+        if (c == 400) return "list_is_empty"; // если закончился список
     }
     while (condition == false);
 
@@ -42,21 +42,35 @@ string chooseUserWord(string* list, int* used_index, string pc_word)
     string user_word;
     int index;
     bool condition;
-    
+
     do
     {
-        cin >> user_word;
-        user_word = toLowercase(user_word);
-        index = searchIndex(user_word,list);
-        
-        condition =
+        cout << "| Игрок: ";
+
+        getline(cin, user_word);
+
+        if (user_word == "0")
+        {
+            cout << "End_of_Game"  << endl;
+            exit(0);
+        }
+
+        else
+        {
+            user_word = toLowercase(user_word);
+            index = searchIndex(user_word, list);
+
+            condition =
                 (index != -1) && // cлово существует
                 (checkWords(pc_word, user_word)) && // соблюдает правила
-                (*(used_index+index) == -1); // не использовалось ранее
+                (*(used_index + index) == -1); // не использовалось ранее
+
+            if (condition == false) cout << "| Слово использованно / слова не существует" << endl;
+        }
     }
     while (condition == false);
 
-    *(used_index+index) = index;
+    *(used_index + index) = index;
 
     return user_word;
 }
